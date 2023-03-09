@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Footer } from './components/footer';
+import { Header } from './components/header';
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const headerArray = ["Home", "About", "Practical"];
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Header array={[headerArray]}/>
+      <App />
+      <Footer array={[headerArray]} />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

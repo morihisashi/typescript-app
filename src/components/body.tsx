@@ -1,7 +1,7 @@
 import React from 'react';
 import './body.css';
 
-export function Body(props){
+export function Body(props: {title: string, name: string}){
     return (
         <div className={"Body"}>
             <body>

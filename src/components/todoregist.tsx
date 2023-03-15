@@ -1,13 +1,14 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import '../App.css';
 
 export function TodoRegist(){
-    const [text, setText] = useState("");
-    const [addText, setAddText] = useState([]);
-    const [temporaryText, setTemporaryText] = useState([]);
-    const [date, setDate] = useState("");
-    const [temporaryDate, setTemporaryDate] = useState([]);
-    const [addDate, setAddDate] = useState([]);
+    const [text, setText] = useState<string>("");
+    const [addText, setAddText] = useState<string[]>([]);
+    const [temporaryText, setTemporaryText] = useState<string[]>([]);
+    const [date, setDate] = useState<string>("");
+    const [temporaryDate, setTemporaryDate] = useState<string[]>([]);
+    const [addDate, setAddDate] = useState<string[]>([]);
 
     const onClickAddText = () => {
         setTemporaryText([...temporaryText, text]);

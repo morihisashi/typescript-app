@@ -1,11 +1,12 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { Body } from '../components/body';
 import { useForm } from 'react-hook-form';
 import '../App.css';
 
 export function Practicalpage(){
-    const [addDate, setAddDate] = useState([]);
-    const [addText, setAddText] = useState([]);
+    const [addDate, setAddDate] = useState<string[]>([]);
+    const [addText, setAddText] = useState<string[]>([]);
     
     // 初期化
     const {

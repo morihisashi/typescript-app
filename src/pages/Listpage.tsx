@@ -2,12 +2,12 @@ import {React, useState, useEffect }from 'react';
 import '../App.css';
 
 export function Listpage(){
-    const text = sessionStorage.getItem('todoText');
-    const todoDate = sessionStorage.getItem('todoDate');
+    const text: string | null = sessionStorage.getItem('todoText')!;
+    const todoDate: string | null  = sessionStorage.getItem('todoDate')!;
     const [array, setArray]= useState(text.split(','));
     const [date, setDate]= useState(todoDate.split(','));
 
-    const onClickDelArray = (key) => {
+    const onClickDelArray = (key: number) => {
         setArray(
             array.filter((del) => (del !== array[key]))
         );

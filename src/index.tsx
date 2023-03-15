@@ -7,14 +7,14 @@ import { Footer } from './components/footer';
 import { Header } from './components/header';
 import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const headerArray = ["Home", "About", "Practical"];
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+const headerArray: string[] = ["Home", "About", "Practical"];
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Header array={[headerArray]}/>
+      <Header {...headerArray}/>
       <App />
-      <Footer array={[headerArray]} />
+      <Footer {...headerArray} />
     </BrowserRouter>
   </React.StrictMode>
 );

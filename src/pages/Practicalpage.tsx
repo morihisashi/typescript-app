@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Body } from '../components/body';
 import { useForm } from 'react-hook-form';
 import '../App.css';

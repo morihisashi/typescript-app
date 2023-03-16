@@ -17,8 +17,12 @@ export function TodoRegist(){
     }
 
     const onClickRegistText = () => {
-        setAddText([...addText, temporaryText]);
-        setAddDate([...addDate, temporaryDate]);
+        {temporaryText.map((val: string) => 
+        setAddText([...addText, val])
+        )}
+        {temporaryDate.map((val: string) => 
+            setAddDate([...addDate, val])
+        )}
     }
     
     useEffect(() => {

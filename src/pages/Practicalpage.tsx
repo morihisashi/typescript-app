@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Body } from '../components/body';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import '../App.css';
 
 export function Practicalpage(){
     const [addDate, setAddDate] = useState<string[]>([]);
     const [addText, setAddText] = useState<string[]>([]);
-    
+    type ValuesType = {
+        data: string[];
+        date: string;
+        text: string;
+    }
     // 初期化
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm();
+    } = useForm<ValuesType>();
 
     // フォーム送信ボタンを押された時の処理
-    const onsubmit = (data) => {
+    const onSubmit: SubmitHandler<ValuesType> = (data) => {
         setAddDate([...addDate, data['date']]);
         setAddText([...addText, data['text']]);
         reset();   // フォームに入力した値をリセット
@@ -47,7 +51,7 @@ export function Practicalpage(){
     return (
     <div className={"App"}>
         <Body title="Practical Pages" name="Practicalpageへ遷移" />
-        <form onSubmit={handleSubmit(onsubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <input type="date" {...register('date', { required: '日付を入力してね' })} />
             <p>{errors.date?.message}</p> {/* エラー表示 */}
                 <textarea className={"textarea"}
